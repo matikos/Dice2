@@ -1,0 +1,129 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('images/casino.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: top center;
+}
+
+.wrapper {
+  margin-top: 67px;
+  margin-left: 200px;
+  height: 400px;
+  width: 800px;
+  border: double 4px yellowgreen;
+  box-shadow: yellowgreen 0px -1px 4px 1px;
+  /* position: absolute; */
+  left: 21%;
+  top: 7%;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.player-1-section {
+  height: 100%;
+  width: 40%;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 18px;
+}
+.player-2-section {
+  order: 1;
+  height: 100%;
+  width: 40%;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 18px;
+
+}
+.active {
+  background-color: #9acd3261;
+}
+
+.player-current-score {
+  margin: 0 auto;
+  background-color: #7f0303;
+  width: 122px;
+  height: 70px;
+  position: relative;
+  top: 124px;
+}
+h2 {
+  margin-bottom: 0;
+}
+
+#die1 {
+  position: absolute;
+  top: 59px;
+  right: -19px;
+  }
+  #die2 {
+    position: absolute;
+    top: 59px;
+    right: -19px;
+  }
+  #die3 {
+  position: absolute;
+  top: 59px;
+  right: -19px;
+  }
+  #die4 {
+  position: absolute;
+  top: 59px;
+  right: -19px;
+  }
+  #die5 {
+  position: absolute;
+  top: 59px;
+  right: -19px;
+  }
+  #die6 {
+  position: absolute;
+  top: 59px;
+  right: -19px;
+  }
+
+.menu {
+  position: absolute;
+  align-self: flex-start;
+  top: 13%;
+  left: 52%;
+  font-size: 40px;
+}
+#reset {
+  
+  margin: 0 auto;
+  top: 27%;
+  height: 40px;
+  width: 100px;
+  background-color:#ffffff75;
+  display: block;
+}
+.rollBtn {
+  position: absolute;
+  top: 219px;
+  height: 40px;
+  width: 100px;
+  background-color:#ffffff75;
+  display: block;
+}
+.holdBtn {
+  position: absolute;
+  top: 288px;
+  right: 0px;
+  height: 40px;
+  width: 100px;
+  background-color:#ffffff75;
+  display: none;
+}

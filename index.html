@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+                <link rel="stylesheet" href="style.css">
+                    <title>Roll With Me 2!</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            
+            <div class="player-1-section active">
+                <h1 class="player-name" id="player1">Player 1</h1>
+                <h1 class="player-score-1" id="score1">0</h1>
+                <div class="player-current-score">
+                    <h2>CURRENT
+                    <class="player-current-score" id="current-score-1">0</h2>
+                </div>
+            </div>
+            
+            <div class="player-2-section ">
+                <h1 class="player-name" id="player2">Player 2</h1>
+                <h1 class="player-score2" id="score2">0</h1>
+                <div class="player-current-score">
+                    <h2>CURRENT
+                        <class="player-current-score" id="current-score-2">0</h2>
+                </div>
+            </div>
+            
+            <div class="menu">
+                <button id="reset"><i class="fas fa-plus-circle"></i>NEW GAME</button>
+                <img id="die1" src="images/Die_1.png" style="display: none;">                    
+                <img id="die2" src="images/Die_2.png" style="display: none;">
+
+                <img id="die3" src="images/Die_3.png" style="display: none;">
+
+                <img id="die4" src="images/Die_4.png" style="display: none;">
+
+                <img id="die5" src="images/Die_5.png" style="display: none;">
+
+                <img id="die6" src="images/Die_6.png" style="display: none;">
+                    
+                <div class="ext">
+                        <button class="rollBtn" id="roll"><i class="fas fa-sync-alt"></i>ROLL DICE</button>
+                        <button class="holdBtn" id="hold"><i class="fas fa-arrow-circle-down"></i>HOLD</button>
+                    </div>
+                    </div>
+        </div>
+        
+        <script src="app.js"></script>
+    </body>
+</html>
+
