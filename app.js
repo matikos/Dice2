@@ -110,12 +110,16 @@ rollDice.addEventListener('click', () => {
         score1.textContent = playerScore1;
         swapPlayers();
         totalScore = 0;
+        rollDice.style.display = 'none';
+        hold.style.display = 'none';
         break;
       case (statusPlayer2 && (roll == 1) && (playerScore1 != 0)):
         playerScore2 = 0;
         currentScore2.textContent = playerScore2;
         score2.textContent = playerScore2;
+        rollDice.style.display = 'none';
         player1.textContent = "WINNER";
+        hold.style.display = 'none';
         break;
       case (statusPlayer2 && (roll == 1)):
         playerScore2 = 0;
@@ -123,10 +127,11 @@ rollDice.addEventListener('click', () => {
         score2.textContent = playerScore2;
         swapPlayers(); 
         totalScore = 0;
+        
         break;
         
       default:
-        swapPlayers();
+      
         break;
     }
 
@@ -147,6 +152,8 @@ hold.addEventListener('click', () => {
   player2Pane[0].classList.toggle('active');
   
   swapPlayers();
+
+  
 
   totalScore = 0;
   score1.textContent = playerScore1;
