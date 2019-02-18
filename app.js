@@ -30,6 +30,10 @@ const hold = document.getElementById('hold');
 let totalScore = 0;
 let statusPlayer1 = true;
 let statusPlayer2 = false;
+let playerScore1 = 0;
+let playerScore2 = 0;
+
+
 //Game Starts
 newGame.addEventListener('click', () => {
  //clearing die image from last game
@@ -37,17 +41,23 @@ newGame.addEventListener('click', () => {
     allDice[i].style.display = "none";
   };
   
-
+  
   score1.textContent = "0";
   currentScore1.innerHTML = "0";
   score2.textContent = "0";
   currentScore2.innerHTML = "0";
   totalScore = 0;
-// getting roll button back
+  playerScore1 = 0;
+  playerScore2 = 0;
   rollDice.style.display = 'block';
 
+  // statusPlayer1 = !statusPlayer1;
+  // statusPlayer2 = !statusPlayer2; 
   
-
+  player1Pane[0].classList.add('active');
+  player2Pane[0].classList.remove('active');
+  player1.textContent = "Player 1";
+  player2.textContent = "Player 2";
 });
   
  
@@ -59,7 +69,6 @@ newGame.addEventListener('click', () => {
       allDice[i].style.display = "none";
     };
 
-   //  deactivating player2
     
 
    //  rolling the die
@@ -75,32 +84,89 @@ newGame.addEventListener('click', () => {
   // awarding score to active player
     totalScore += roll;
      if (statusPlayer1) {
-      currentScore1.textContent = totalScore;
+      playerScore1 = totalScore;
+      currentScore1.textContent = playerScore1;
      } else {
-      currentScore2.textContent = totalScore;
+      playerScore2 = totalScore;
+      currentScore2.textContent = playerScore2;
      }
     
-    
-    hold.style.display = 'block';
-    
+    // if (roll == 1) {
+    //  player1Score = 0;
+    //  currentScore1.textContent = player1Score;
 
-    if (roll == 1) {
-     player1Score = 0;
-     currentScore1.textContent = player1Score;
-     player2Score = totalScore;
-     
-    };
-    
+    // };
+     hold.style.display = 'block';
+
     console.log(roll);
-    console.log(totalScore)
+    console.log(`totalsc ${totalScore}`);
+    console.log(`playerScore1 ${playerScore1}`);
+    console.log(`playerScore2 ${playerScore2}`);
+    console.log(`status1 ${statusPlayer1}`);
+    console.log(`status2 ${statusPlayer2}`)
    
+  
+  const truth = true;
+  switch (truth) {
+    case (statusPlayer1 && (roll == 1)):
+      playerScore1 = 0;
+      currentScore1.textContent = playerScore1;
+      score1.textContent = playerScore1;
+      statusPlayer1 = !statusPlayer1;
+      statusPlayer2 = !statusPlayer2; 
+      totalScore = 0;
+      break;
+    case (statusPlayer2 && (roll == 1) && (playerScore1 != 0)):
+      playerScore2 = 0;
+      currentScore2.textContent = playerScore2;
+      score2.textContent = playerScore2;
+      player1.textContent = "WINNER";
+      break;
+    case (statusPlayer2 && (roll == 1)):
+      playerScore2 = 0;
+      currentScore2.textContent = playerScore2;
+      score2.textContent = playerScore2;
+      statusPlayer1 = !statusPlayer1;
+      statusPlayer2 = !statusPlayer2; 
+      totalScore = 0;
+      break;
+      
+    default:
+      score1.textContent = playerScore1;
+      score2.textContent = playerScore2;
+      break;
+}
+
+   if (statusPlayer2 && (playerScore1 < playerScore2)) {
+    player2.textContent = "WINNER";
+    score2.textContent = playerScore2;
+    rollDice.style.display = 'none';
+    hold.style.display = 'none';
+    statusPlayer1 = !statusPlayer1;
+    statusPlayer2 = !statusPlayer2; 
+  };
 });
+
+
+
 
 hold.addEventListener('click', () => {
   player1Pane[0].classList.toggle('active');
   player2Pane[0].classList.toggle('active');
-
- statusPlayer1 = !statusPlayer1;
- statusPlayer2 = !statusPlayer2;
   
-})
+  statusPlayer1 = !statusPlayer1;
+  statusPlayer2 = !statusPlayer2;
+
+  totalScore = 0;
+
+
+    score1.textContent = playerScore1;
+
+    score2.textContent = playerScore2;
+ 
+
+  
+});
+
+
+
