@@ -62,10 +62,15 @@ const resetDice = () => {
 newGame.addEventListener('click', () => {
   resetDice();
   resetScores();
+  
   player1Pane[0].classList.add('active');
   player2Pane[0].classList.remove('active');
+  
   player1.textContent = "Player 1";
   player2.textContent = "Player 2";
+
+  statusPlayer1 = true;
+  statusPlayer2 = false;
 });
   
  
