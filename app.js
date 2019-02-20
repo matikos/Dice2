@@ -73,15 +73,13 @@ newGame.addEventListener('click', () => {
 rollDice.addEventListener('click', () => {
   resetDice();
 
-   //  rolling the die
-    let roll = Math.floor((Math.random() * 6 )+ 1);
-    let nextDie = allDice[(roll - 1)];
+  //  rolling the die
+   let roll = Math.floor((Math.random() * 6 )+ 1);
+   let nextDie = allDice[(roll - 1)];
     if (nextDie.style.display == 'none') {
       nextDie.style.display = 'block';
-    
     } else {
       nextDie.style.display = 'none';
-    
     };
   // awarding score to active player
     totalScore += roll;
@@ -108,10 +106,10 @@ rollDice.addEventListener('click', () => {
         playerScore1 = 0;
         currentScore1.textContent = playerScore1;
         score1.textContent = playerScore1;
-        swapPlayers();
+        // swapPlayers();
         totalScore = 0;
         rollDice.style.display = 'none';
-        hold.style.display = 'none';
+        // hold.style.display = 'none';
         break;
       case (statusPlayer2 && (roll == 1) && (playerScore1 != 0)):
         playerScore2 = 0;
@@ -125,7 +123,7 @@ rollDice.addEventListener('click', () => {
         playerScore2 = 0;
         currentScore2.textContent = playerScore2;
         score2.textContent = playerScore2;
-        swapPlayers(); 
+        // swapPlayers(); 
         totalScore = 0;
         
         break;
@@ -153,11 +151,11 @@ hold.addEventListener('click', () => {
   
   swapPlayers();
 
-  
-
   totalScore = 0;
   score1.textContent = playerScore1;
   score2.textContent = playerScore2;
+
+  rollDice.style.display = 'block'
 });
 
 
