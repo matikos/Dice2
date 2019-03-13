@@ -93,7 +93,7 @@ h2 {
   top: 27%;
   height: 40px;
   width: 100px;
-  background-color:#ffffff75;
+  background-color:var(--gray);
   display: block;
   cursor: pointer;
 }
@@ -102,7 +102,7 @@ h2 {
   top: 72px;
   height: 40px;
   width: 100px;
-  background-color:#ffffff75;
+  background-color:var(--gray);
   display: block;
   cursor: pointer;
 }
