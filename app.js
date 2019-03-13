@@ -44,9 +44,6 @@ const resetScores = () => {
   rollDice.style.display = 'block';
 };
 
-
-
-
 const resetDice = () => {
   for (let i = 0; i < allDice.length; i++) {
     allDice[i].style.display = "none";
@@ -57,7 +54,39 @@ const resetDice = () => {
     statusPlayer1 = !statusPlayer1;
     statusPlayer2 = !statusPlayer2; 
  };
-  
+
+ const player1Rolls1 = () => {
+  playerScore1 = 0;
+  currentScore1.textContent = playerScore1;
+  score1.textContent = playerScore1;
+  totalScore = 0;
+  rollDice.style.display = 'none';
+ };
+
+ const player2LoosesBy1 = () => {
+  playerScore2 = 0;
+  currentScore2.textContent = playerScore2;
+  score2.textContent = playerScore2;
+  rollDice.style.display = 'none';
+  player1.textContent = "WINNER";
+  hold.style.display = 'none';
+ };
+
+ const player2Rolls1 = () => {
+  playerScore2 = 0;
+  currentScore2.textContent = playerScore2;
+  score2.textContent = playerScore2;
+  totalScore = 0;
+ };
+
+ const player2Wins = () => {
+  player2.textContent = "WINNER";
+  score2.textContent = playerScore2;
+  rollDice.style.display = 'none';
+  hold.style.display = 'none';
+  swapPlayers(); 
+ }
+
 //Game Starts
 newGame.addEventListener('click', () => {
   resetDice();
@@ -73,6 +102,7 @@ newGame.addEventListener('click', () => {
   statusPlayer2 = false;
 });
   
+
  
   // player1 turn
 rollDice.addEventListener('click', () => {
@@ -98,57 +128,26 @@ rollDice.addEventListener('click', () => {
     
      hold.style.display = 'block';
 
-    console.log(roll);
-    console.log(`totalsc ${totalScore}`);
-    console.log(`playerScore1 ${playerScore1}`);
-    console.log(`playerScore2 ${playerScore2}`);
-    console.log(`status1 ${statusPlayer1}`);
-    console.log(`status2 ${statusPlayer2}`)
-   
-  
     switch (true) {
       case (statusPlayer1 && (roll == 1)):
-        playerScore1 = 0;
-        currentScore1.textContent = playerScore1;
-        score1.textContent = playerScore1;
-        // swapPlayers();
-        totalScore = 0;
-        rollDice.style.display = 'none';
-        // hold.style.display = 'none';
+        player1Rolls1();
         break;
       case (statusPlayer2 && (roll == 1) && (playerScore1 != 0)):
-        playerScore2 = 0;
-        currentScore2.textContent = playerScore2;
-        score2.textContent = playerScore2;
-        rollDice.style.display = 'none';
-        player1.textContent = "WINNER";
-        hold.style.display = 'none';
+        player2LoosesBy1();
         break;
       case (statusPlayer2 && (roll == 1)):
-        playerScore2 = 0;
-        currentScore2.textContent = playerScore2;
-        score2.textContent = playerScore2;
-        // swapPlayers(); 
-        totalScore = 0;
-        
+        player2Rolls1
         break;
         
       default:
-      
         break;
     }
 
     if (statusPlayer2 && (playerScore1 < playerScore2)) {
-      player2.textContent = "WINNER";
-      score2.textContent = playerScore2;
-      rollDice.style.display = 'none';
-      hold.style.display = 'none';
-      swapPlayers(); 
+
+        player2Wins();
     };
 });
-
-
-
 
 hold.addEventListener('click', () => {
   player1Pane[0].classList.toggle('active');
@@ -162,6 +161,3 @@ hold.addEventListener('click', () => {
 
   rollDice.style.display = 'block'
 });
-
-
-
