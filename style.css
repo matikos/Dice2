@@ -9,32 +9,24 @@
 }
 
 body {
+  height: 100vh;
   background-image: url('images/casino.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
   background-attachment: fixed;
   background-position: top center;
 }
 
-/* test {
-  width: wf
-  height
-  margin
-  padding
-  position
-  background
-} */
 
 .wrapper {
-  margin-top: 67px;
-  margin-left: 295px;
-  height: 400px;
   width: 800px;
-  border: double 4px yellowgreen;
-  box-shadow: yellowgreen 0px -1px 4px 1px;
+  height: 400px;
+  margin-top: 67px;
+  margin-left: 350px;
   left: 21%;
   top: 7%;
+  border: double 4px yellowgreen;
+  box-shadow: yellowgreen 0px -1px 4px 1px;
   text-align: center;
   display: flex;
   flex-direction: row;
@@ -43,80 +35,90 @@ body {
 }
 
 .player-1-section {
-  height: 100%;
   width: 40%;
-  text-align: center;
+  height: 100%;
   font-family: 'Roboto Mono', monospace;
   font-size: 18px;
+  text-align: center;
 }
 .player-2-section {
   order: 1;
-  height: 100%;
   width: 40%;
-  text-align: center;
+  height: 100%;
   font-family: 'Roboto Mono', monospace;
   font-size: 18px;
-
+  text-align: center;
 }
 .active {
   background-color: #9acd3261;
 }
 
 .player-current-score {
-  margin: 0 auto;
-  background-color: #7f0303;
   width: 122px;
   height: 70px;
-  position: relative;
+  margin: 0 auto;
   top: 124px;
+  position: relative;
+  background-color: #7f0303;
 }
 h2 {
   margin-bottom: 0;
 }
 
 .die {
-  position: relative;
   top: 59px;
+  position: relative;
   }
 
 .menu {
-  align-self: flex-start;
   top: 13%;
   font-size: 40px;
+  align-self: flex-start;
   display: flex;
   flex-direction: column;
   align-items: center
 }
 #reset {
-  
+  width: 100px;
+  height: 40px;
   margin: 0 auto;
   top: 27%;
-  height: 40px;
-  width: 100px;
-  background-color:var(--gray);
   display: block;
+  background-color:var(--gray);
   cursor: pointer;
 }
 .rollBtn {
+  width: 100px;
+  height: 40px;
   position: relative;
   top: 72px;
-  height: 40px;
-  width: 100px;
-  background-color:var(--gray);
   display: block;
+  background-color:var(--gray);
   cursor: pointer;
 }
 .holdBtn {
-  position: relative;
-  top: 101px;
-  height: 40px;
   width: 100px;
-  background-color:var(--gray);
+  height: 40px;
+  top: 101px;
+  position: relative;
   display: none;
+  background-color:var(--gray);
   cursor: pointer;
 }
 
 
-/* @media screen and (min-width: 980px) {
-
-} */
+@media screen and (max-width: 1110px) {
+  .wrapper {
+  margin-left: 163px
+  }
+}
+@media screen and (max-width: 975px) {
+  .wrapper {
+  margin-left: 78px
+  }
+}
+@media screen and (max-width: 890px) {
+  .wrapper {
+  margin-left: 33px
+  }
+}
